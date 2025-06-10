@@ -1,7 +1,15 @@
 package main
 
-import "time"
+import (
+	"fmt"
+	"log"
+	"tenant-chat-service/config"
+)
 
 func main() {
-	time.Sleep(100 * time.Second)
+	cfg, err := config.NewConfig()
+	if err != nil {
+		log.Fatalf(fmt.Sprintf("error while loading cfg %v", err))
+	}
+
 }
